@@ -30,11 +30,11 @@ Background:
     Then the user should see "Surname can't be blank"
 
 #-------------------- Test ID: 22 -------------------#
-  Scenario: Edit user with missing forname
+  Scenario: Edit user with missing forename
 		Then clicks first "Edit" user link
 		And replaces forename with ""
 		And the user presses "Update"
-    Then the user should see "Forename can't be blank"
+    Then the user should see "Firstname can't be blank"
 
 #-------------------- Test ID: 23 -------------------#
   Scenario: Edit user with missing email
@@ -112,7 +112,7 @@ Background:
     Then the user fills in all valid details
     Then presses "Create"
     Then the user visits user id "42" page
-    Then the user should see "Craig Heptinstall"
+    Then the user should see "User AnotherTest"
 
 #-------------------- Test ID: 34 -------------------#
   Scenario: Create new user with no information
@@ -125,7 +125,6 @@ Background:
     Then the user clicks link "New User"
     Then the user fills in all valid details
     And replaces forename with ""
-    Then the user fills in all valid details
     Then presses "Create"
     Then the user should see "Firstname can't be blank"
 
@@ -197,6 +196,7 @@ Background:
 
 #-------------------- Test ID: 44 -------------------#
   Scenario: Create new user without saving
+    Then the user clicks link "New User"
     Then the user fills in all valid details
     Then presses "Create"
     Then the user visits user id "42" page
@@ -204,13 +204,15 @@ Background:
 
 #-------------------- Test ID: 45 -------------------#
   Scenario: Create new user with matching details
+    Then the user clicks link "New User"
     Then the user fills in all details matching another user
     Then presses "Create"
     Then the user should see "User detail login has already been taken"
 
 #-------------------- Test ID: 47-48 -------------------#
   Scenario Outline: Create new user with invalid confirmation password
-    Then the user fills in valid details
+    Then the user clicks link "New User"
+    Then the user fills in all valid details
     And replaces password confirmation with <passwordConfirm>
     Then presses "Create"
     Then the user should see <error>
