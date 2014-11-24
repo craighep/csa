@@ -34,3 +34,13 @@ Feature: Access to pages tests
   Scenario: View broadcasts using address bar when not logged in
     Then the user goes to the broadcasts page
     Then the user should see "Please log in"
+
+#-------------------- Test ID: 19 -------------------#
+  Scenario: View user using ID
+    Then the user visits user id "41" page
+    Then the user should see "Back"
+
+#-------------------- Test ID: 46 -------------------#
+  Scenario: List users using link not signed in
+    Then the user goes to the users page
+    Then the user should see "Please log in"
