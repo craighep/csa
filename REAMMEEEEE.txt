@@ -1,0 +1,2 @@
+UNCOMMENT THIS IN config/initialisers/force_ssl_extension.rb
+  #  return unless config.use_ssl # <= this is new
