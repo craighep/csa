@@ -1,5 +1,5 @@
 module UserDetailsHelper
-  
+
   #
   # Use this to wrap view elements that the user_detail can't access.
   # !! Note: this is an *interface*, not *security* feature !!
@@ -55,7 +55,7 @@ module UserDetailsHelper
   #
   # Link to login page using remote ip address as link content
   #
-  # The :title (and thus, tooltip) is set to the IP address 
+  # The :title (and thus, tooltip) is set to the IP address
   #
   # Examples:
   #   link_to_login_with_IP
@@ -85,7 +85,7 @@ module UserDetailsHelper
     else
       content_text = options.delete(:content_text) || 'not signed in'
       # kill ignored options from link_to_user
-      [:content_method, :title_method].each{|opt| options.delete(opt)} 
+      [:content_method, :title_method].each{|opt| options.delete(opt)}
       link_to_login_with_IP content_text, options
     end
   end

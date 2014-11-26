@@ -8,7 +8,12 @@ SimpleCov.start do
   add_filter '/features/'
   add_filter '/config/initializers/force_ssl_extension.rb'
   add_filter '/app/models/image_service.rb'
+  add_filter 'app/helpers/user_details_helper.rb'
 end
+
+
+#require 'simplecov-json'
+#SimpleCov.formatter = SimpleCov::Formatter::JSONFormatter
 
 require 'cucumber/rails'
 

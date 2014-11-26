@@ -3,7 +3,7 @@ Given /^a signed in user as admin$/ do
 end
 
 Then /^presses "([^\"]*)"$/ do |button|
-	click_button "#{button}"
+	click_button(button)
 end
 
 Then /^the user should see list of users$/ do
@@ -40,6 +40,7 @@ end
 
 And /^replaces user search box with "([^\"]*)"$/ do |search|
 	fill_in "q", :with => search
+	puts(find(:xpath, "//*[@id='q']").value)
 end
 
 Then /^the user visits user id "([^\"]*)" page$/ do |id|
@@ -145,12 +146,12 @@ Then /^the user fills in all valid details$/ do
 end
 
 Then /^the user fills in all details matching another user$/ do
-	fill_in "user_surname", :with => "Heptinstall"
-	fill_in "user_firstname", :with => "Craig"
-	fill_in "user_email", :with => "crh13@aber.ac.uk"
+	fill_in "user_surname", :with => "Chris"
+	fill_in "user_firstname", :with => "Loftus"
+	fill_in "user_email", :with => "cwl11@aber.ac.uk"
 	fill_in "user_phone", :with => "12345678910"
-	fill_in "user_grad_year", :with => "2014"
-	fill_in "user_user_detail_attributes_login", :with => "TestCraig"
-	fill_in "user_user_detail_attributes_password", :with => "test"
+	fill_in "user_grad_year", :with => "1985"
+	fill_in "user_user_detail_attributes_login", :with => "admin"
+	fill_in "user_user_detail_attributes_password", :with => "taliesen"
 	fill_in "user_user_detail_attributes_password_confirmation", :with => "test"
 end

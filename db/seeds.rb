@@ -27,10 +27,26 @@ User.transaction do
                      password: 'taliesin',
                      user: user)
 
+  # Create one test user
+  user = User.create!(surname: 'Craig',
+                      firstname: 'Heptinstall',
+                      email: 'crh13@aber.ac.uk',
+                      phone: '00000000000',
+                      grad_year: 2014)
+  UserDetail.create!(login: 'craig',
+                     password: 'secret',
+                     user: user)
+
   # Create some dummy feeds
-  Feed.create!(name: 'twitter')
+  twitter = Feed.create!(name: 'twitter')
   Feed.create!(name: 'facebook')
-  Feed.create!(name: 'email')
+  email = Feed.create!(name: 'email')
   Feed.create!(name: 'RSS')
   Feed.create!(name: 'atom')
+
+  t = Time.now
+  str_time = t.strftime('%H:%M:%S')
+  Broadcast.create!(user_id: user,
+                    feeds: [twitter, email],
+                    content:  "#CraigBakes setup all the cucumbers " + str_time)
 end

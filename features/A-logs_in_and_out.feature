@@ -20,7 +20,7 @@ Feature: Log in and out
     |"admin"|"taliesin"|
     |"cwl11"|"secret"|
     |"cwl5"|"secret"|
-    |"TestUser"|"test"|
+    |"cwl13"|"secret"|
 
 #-------------------- Test ID: 3 -------------------#
   Scenario: Successful logout

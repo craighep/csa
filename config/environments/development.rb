@@ -45,7 +45,7 @@ Csa::Application.configure do
       port: 25
   }
 
-  ADMIN_EMAIL="admin@host.ac.com" # Change to your email
+  ADMIN_EMAIL="crh13@aber.ac.uk" # Change to your email
 
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large

@@ -166,6 +166,9 @@ GEM
       multi_json (~> 1.0)
       simplecov-html (~> 0.8.0)
     simplecov-html (0.8.0)
+    simplecov-json (0.2)
+      json
+      simplecov
     sprockets (2.11.0)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -223,6 +226,7 @@ DEPENDENCIES
   selenium-webdriver
   simple-navigation
   simplecov
+  simplecov-json
   sqlite3
   thin
   turbolinks

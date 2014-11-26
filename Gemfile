@@ -69,3 +69,4 @@ group :test do
 end
 
 gem 'simplecov'
+gem 'simplecov-json', :require => false, :group => :test

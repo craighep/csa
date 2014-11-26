@@ -5,16 +5,16 @@ Background:
   Given a signed in user as admin
   Then the user clicks link "Users"
 
-#-------------------- Test ID: 17 -------------------#
+#-------------------- Test ID: 20 -------------------#
   Scenario: List users using link
 		Given the user should see list of users
 
-#-------------------- Test ID: 18 -------------------#
+#-------------------- Test ID: 21 -------------------#
 	Scenario: View user using links
 		Given clicks first "Show" user link
 		Then the user should see "Close"
 
-#-------------------- Test ID: 20 -------------------#
+#-------------------- Test ID: 22 -------------------#
 	Scenario: Edit user with valid information
 		Then clicks first "Edit" user link
 		And replaces surname with "Testing"
@@ -22,105 +22,98 @@ Background:
 		Then the user should see "Testing"
 		And the user should see "Account was successfully updated"
 
-#-------------------- Test ID: 21 -------------------#
+#-------------------- Test ID: 23 -------------------#
   Scenario: Edit user with missing surname
 		Then clicks first "Edit" user link
 		And replaces surname with ""
 		And the user presses "Update"
     Then the user should see "Surname can't be blank"
 
-#-------------------- Test ID: 22 -------------------#
+#-------------------- Test ID: 24 -------------------#
   Scenario: Edit user with missing forename
 		Then clicks first "Edit" user link
 		And replaces forename with ""
 		And the user presses "Update"
     Then the user should see "Firstname can't be blank"
 
-#-------------------- Test ID: 23 -------------------#
+#-------------------- Test ID: 25 -------------------#
   Scenario: Edit user with missing email
 		Then clicks first "Edit" user link
 		And replaces email with ""
 		And the user presses "Update"
     Then the user should see "Email can't be blank"
 
-#-------------------- Test ID: 24 -------------------#
+#-------------------- Test ID: 26 -------------------#
   Scenario: Edit user with invalid email format
 		Then clicks first "Edit" user link
 		And replaces email with "testNotEmail"
 		And the user presses "Update"
     Then the user should see "Bad email address format"
 
-#-------------------- Test ID: 25 -------------------#
-  Scenario: Edit user with missing phone number
-		Then clicks first "Edit" user link
-		And replaces phone with ""
-		And the user presses "Update"
-    Then the user should see "Phone number can't be blank"
-
-#-------------------- Test ID: 26 -------------------#
+#-------------------- Test ID: 27 -------------------#
   Scenario: Edit user with word as phone number
     Then clicks first "Edit" user link
     And replaces phone with "test"
     And the user presses "Update"
     Then the user should see "Bad phone number address format"
 
-#-------------------- Test ID: 27 -------------------#
+#-------------------- Test ID: 28 -------------------#
   Scenario: Edit user with missing email
 		Then clicks first "Edit" user link
 		And replaces surname with ""
 		And the user presses "Update"
     Then the user should see "Surname can't be blank"
 
-#-------------------- Test ID: 28 -------------------#
+#-------------------- Test ID: 29 -------------------#
   Scenario: Edit user with missing grad year
 		Then clicks first "Edit" user link
 		And replaces grad year with ""
 		And the user presses "Update"
     Then the user should see "Grad year can't be blank"
 
-#-------------------- Test ID: 29 -------------------#
+#-------------------- Test ID: 30 -------------------#
   Scenario: Edit user with too low grad year
 		Then clicks first "Edit" user link
 		And replaces grad year with "1900"
 		And the user presses "Update"
     Then the user should see "Grad year must be greater than or equal to 1970"
 
-#-------------------- Test ID: 30 -------------------#
+#-------------------- Test ID: 31 -------------------#
   Scenario: Edit user with letter as grad year
 				Then clicks first "Edit" user link
 		And replaces grad year with "abc"
 		And the user presses "Update"
     Then the user should see "Grad year is not a number"
 
-#-------------------- Test ID: 31 -------------------#
+#-------------------- Test ID: 32 -------------------#
   Scenario: Check the user jobs checkbox and save
     Then clicks first "Edit" user link
     Then the user checks the "jobs" checkbox
     And the user presses "Update"
     Then the user should see "Jobs: true"
 
-#-------------------- Test ID: 32 -------------------#
+#-------------------- Test ID: 33 -------------------#
   Scenario: Delete user
     Then clicks first "Destroy" user link
     And the user clicks ok on confirmation dialog
-    Then the user visits user id "41" page
+    Then the user visits user id "42" page
     And the user should see "Account no longer exists"
 
-#-------------------- Test ID: 33 -------------------#
+#-------------------- Test ID: 34 -------------------#
   Scenario: Create new user with valid information
     Then the user clicks link "New User"
     Then the user fills in all valid details
     Then presses "Create"
-    Then the user visits user id "42" page
-    Then the user should see "User AnotherTest"
+    Then the user visits user id "43" page
+    Then the user should see "User Anothertest"
 
-#-------------------- Test ID: 34 -------------------#
+#-------------------- Test ID: 35 -------------------#
   Scenario: Create new user with no information
     Then the user clicks link "New User"
     Then presses "Create"
     Then the user should see "8 errors prohibited this user from being saved"
 
-#-------------------- Test ID: 35 -------------------#
+#-------------------- Test ID: 36 -------------------#
   Scenario: Create new user with no forename
     Then the user clicks link "New User"
     Then the user fills in all valid details
@@ -128,7 +121,7 @@ Background:
     Then presses "Create"
     Then the user should see "Firstname can't be blank"
 
-#-------------------- Test ID: 36 -------------------#
+#-------------------- Test ID: 37 -------------------#
   Scenario: Create new user with no surname
     Then the user clicks link "New User"
     Then the user fills in all valid details
@@ -137,21 +130,13 @@ Background:
     Then presses "Create"
     Then the user should see "Surname can't be blank"
 
-#-------------------- Test ID: 37 -------------------#
+#-------------------- Test ID: 38 -------------------#
   Scenario: Create new user with no email
     Then the user clicks link "New User"
     Then the user fills in all valid details
     And replaces email with ""
     Then presses "Create"
     Then the user should see "Email can't be blank"
-
-#-------------------- Test ID: 38 -------------------#
-  Scenario: Create new user with no phone
-    Then the user clicks link "New User"
-    Then the user fills in all valid details
-    And replaces phone with ""
-    Then presses "Create"
-    Then the user should see "Phone can't be blank"
 
 #-------------------- Test ID: 39 -------------------#
   Scenario: Create new user with no grad year
@@ -183,7 +168,7 @@ Background:
     Then the user fills in all valid details
     Then the user checks the "jobs" checkbox
     Then presses "Create"
-    Then the user visits user id "42" page
+    Then the user visits user id "43" page
     Then the user should see "Jobs: true"
 
 #-------------------- Test ID: 43 -------------------#
@@ -191,16 +176,16 @@ Background:
     Then the user clicks link "New User"
     Then the user fills in all valid details
     Then presses "Create"
-    Then the user visits user id "42" page
+    Then the user visits user id "43" page
     Then the user should see "Jobs: false"
 
 #-------------------- Test ID: 44 -------------------#
   Scenario: Create new user without saving
     Then the user clicks link "New User"
     Then the user fills in all valid details
-    Then presses "Create"
-    Then the user visits user id "42" page
-    Then the user should see "Account does not exist"
+    Then the user clicks link "Back"
+    Then the user visits user id "43" page
+    Then the user should see "Account no longer exists"
 
 #-------------------- Test ID: 45 -------------------#
   Scenario: Create new user with matching details
@@ -209,7 +194,7 @@ Background:
     Then presses "Create"
     Then the user should see "User detail login has already been taken"
 
-#-------------------- Test ID: 47-48 -------------------#
+#-------------------- Test ID: 46-47 -------------------#
   Scenario Outline: Create new user with invalid confirmation password
     Then the user clicks link "New User"
     Then the user fills in all valid details
@@ -221,68 +206,65 @@ Background:
     |""|"Password confirmation can't be blank"|
     |"wrong"|"Password confirmation does not match"|
 
-#-------------------- Test ID: 49-50 -------------------#
+#-------------------- Test ID: 48-49 -------------------#
   Scenario Outline: Search for users using forename
     And replaces user search box with <firstname>
     Then presses "Search"
     Then the user should see <result>
     Examples:
     |firstname|result|
-    |"Test"|"Displaying 1 User"|
+    |"chris"|"Displaying 1 User"|
     |"falseuser"|"No entries found"|
 
-#-------------------- Test ID: 51-52 -------------------#
+#-------------------- Test ID: 50-51 -------------------#
   Scenario Outline: Search for users using surname
     And replaces user search box with <surname>
     Then presses "Search"
     Then the user should see <result>
     Examples:
     |surname|result|
-    |"User"|"Displaying 1 User"|
+    |"loftus"|"Displaying 1 User"|
     |"falseuser"|"No entries found"|
 
-#-------------------- Test ID: 53-54 -------------------#
+#-------------------- Test ID: 52-53 -------------------#
   Scenario Outline: Search for users using grad year
     And replaces user search box with <gradYear>
     Then presses "Search"
     Then the user should see <result>
     Examples:
     |gradYear|result|
-    |"1999"|"Displaying 2 Users"|
+    |"1985"|"Displaying User 1 - 6 of 41 in total"|
     |"1234"|"No entries found"|
-    |""|"Displaying User 1 - 6"|
 
-#-------------------- Test ID: 55-56 -------------------#
+#-------------------- Test ID: 54-55 -------------------#
   Scenario Outline: Search for users using phone
     And replaces user search box with <phone>
     Then presses "Search"
     Then the user should see <result>
     Examples:
     |phone|result|
-    |"07777777777"|"Displaying 1 User"|
-    |"1234"|"No entries found"|
-    |""|"Displaying User 1 - 6"|
+    |"01970 622422"|"Displaying User 1 - 6 of 41 in total"|
+    |"999999"|"No entries found"|
 
-#-------------------- Test ID: 57-58 -------------------#
+#-------------------- Test ID: 56-57 -------------------#
   Scenario Outline: Search for users using email
     And replaces user search box with <email>
     Then presses "Search"
     Then the user should see <result>
     Examples:
     |email|result|
-    |"test@test.test"|"Displaying 1 User"|
+    |"cwl@aber.ac.uk"|"Displaying 1 User"|
     |"false@false.false"|"No entries found"|
-    |""|"Displaying User 1 - 6"|
 
-#-------------------- Test ID: 59 -------------------#
+#-------------------- Test ID: 58 -------------------#
   Scenario: Search for users using empty string
     And replaces user search box with ""
     Then presses "Search"
     Then the user should see "Displaying User 1 - 6"
 
-#-------------------- Test ID: 60-64 -------------------#
+#-------------------- Test ID: 59-63 -------------------#
   Scenario Outline: Search user using forename with different checkboxes selected
-    And replaces user search box with "Test"
+    And replaces user search box with "chris"
     Then the user checks the <checkbox> checkbox
     Then presses "Search"
     Then the user should see <result>
@@ -290,7 +272,7 @@ Background:
     |checkbox|result|
     |"firstname"|"Displaying 1 User"|
     |"surname"|"No entries found"|
-    |"email"|"Displaying 1 User"|
+    |"email"|"No entries found"|
     |"phone"|"No entries found"|
     |"grad year"|"No entries found"|
 
@@ -302,11 +284,11 @@ Background:
     Then the user should see <result>
     Examples:
     |text|result|
-    |"Test"|"Displaying 1 User"|
-    |"User"|"Displaying 1 User"|
-    |"test@test.test"|"Displaying 1 User"|
-    |"07777777777"|"Displaying 1 User"|
-    |"1999"|"Displaying 1 User"|
+    |"chris"|"Displaying 1 User"|
+    |"loftus"|"Displaying 1 User"|
+    |"cwl@aber.ac.uk"|"Displaying 1 User"|
+    |"01970 622422"|"Displaying User 1 - 6 of 41 in total"|
+    |"1985"|"Displaying User 1 - 6 of 41 in total"|
     |"flasedata"|"No entries found"|
 
 #-------------------- Test ID: 70 -------------------#

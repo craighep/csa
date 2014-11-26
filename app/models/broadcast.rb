@@ -19,4 +19,3 @@ class Broadcast < ActiveRecord::Base
     8
   end
 end
-
