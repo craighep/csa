@@ -116,7 +116,7 @@ class UsersController < ApplicationController
       respond_to do |format|
         if @service.update_attributes(user_params, params[:image_file])
           format.html { redirect_to(user_url(@user, page: @current_page),
-                                    notice: I18n.t('users.account-created')) }
+                                    notice: I18n.t('users.account-updated')) }
           format.json { head :no_content }
         else
           format.html { render action: 'edit' }
