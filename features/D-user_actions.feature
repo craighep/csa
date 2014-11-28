@@ -1,4 +1,4 @@
-@javascript
+﻿@javascript
 Feature: User list actions
 
 Background:
@@ -60,9 +60,9 @@ Background:
 #-------------------- Test ID: 28 -------------------#
   Scenario: Edit user with missing phone
 		Then clicks first "Edit" user link
-		And replaces surname with ""
+		And replaces phone with ""
 		And the user presses "Update"
-    Then the user should see "Phone can't be blank"
+    And the user should see "Account was successfully updated"
 
 #-------------------- Test ID: 29 -------------------#
   Scenario: Edit user with missing grad year
