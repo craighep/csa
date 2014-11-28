@@ -11,8 +11,8 @@ Feature: Log in and out
 
 #-------------------- Test ID: 2 -------------------#
 	Scenario Outline: Successful login
-		When a user goes to the login page
-		Given a user with username <username> and password <password>
+		Given a user goes to the login page
+		And a user with username <username> and password <password>
     And presses Login
 		Then the user should see "Logged in successfully"
     Examples:

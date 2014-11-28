@@ -58,11 +58,11 @@ Background:
     Then the user should see "Bad phone number address format"
 
 #-------------------- Test ID: 28 -------------------#
-  Scenario: Edit user with missing email
+  Scenario: Edit user with missing phone
 		Then clicks first "Edit" user link
 		And replaces surname with ""
 		And the user presses "Update"
-    Then the user should see "Surname can't be blank"
+    Then the user should see "Phone can't be blank"
 
 #-------------------- Test ID: 29 -------------------#
   Scenario: Edit user with missing grad year
