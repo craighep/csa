@@ -37,7 +37,7 @@ Feature: Log in and out
 		Examples:
 		|username|password|error|
 		|"test1"|""|"Please enter password"|
-		|""|"test2"|Please enter username|
+		|""|"test2"|"Please enter username"|
 		|""|""|"Please enter login credentials"|
 
 #-------------------- Test ID: 7 -------------------#

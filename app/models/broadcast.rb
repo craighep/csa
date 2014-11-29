@@ -2,7 +2,7 @@ class Broadcast < ActiveRecord::Base
 
   # The only restriction is that broadcasts must have some data to
   # be valid and an associated broadcaster (user_id)
-  validates_presence_of :content, allow_blank: false
+  validates :content, :presence => true
 
   belongs_to :user
   has_and_belongs_to_many :feeds

@@ -44,10 +44,7 @@ class BroadcastsController < ApplicationController
     #current_user.user.broadcasts << @broadcast
 
     no_errors = false
-    strContent = params[:content]
-    if strContent.to_s.strip.length == 0
-      flash[:error] = I18n.t('broadcasts.saved-but-message')
-    end
+
     respond_to do |format|
       if @broadcast.save
 
