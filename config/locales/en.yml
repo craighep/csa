@@ -20,7 +20,7 @@ en:
   update:                   "Update"
   please-wait:              "Please wait"
   create:                   "Create"
-  
+
   layout:
     title:                  "CS Alumni - Version 0.1"
 
@@ -48,6 +48,9 @@ en:
     send:                   "Send"
     reset-password:         "Reset password"
     must-be-admin:          "You must be an admin to do that"
+    login-missing-credentials: "Please enter login credentials"
+    login-missing-username: "Please enter username"
+    login-missing-password: "Please enter password"
 
   users:
     editing-account:        "Editing account"
@@ -67,10 +70,3 @@ en:
     unable-message:         "Unable to broadcast to one or more feeds"
     saved-but-message:      "Broadcast was successfully saved, but problems broadcasting to one or more feeds"
     saved-message:          "Broadcast was successfully saved and broadcast to all feeds"
-
-    
-
- 
-    
-    
-  

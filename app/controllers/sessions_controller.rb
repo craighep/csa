@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   end
 
   # POST /session
-  def create 
+  def create
     user_detail = UserDetail.authenticate(params[:login], params[:password])
     if user_detail
       self.current_user = user_detail
@@ -17,7 +17,15 @@ class SessionsController < ApplicationController
       redirect_to(uri || home_url)
       flash[:notice] = I18n.t('sessions.login-success')
     else
-      flash[:error] = I18n.t('sessions.login-failure') + " #{params[:login]}"
+      if params[:login].empty? && params[:password].empty?
+        flash[:notice] = I18n.t('sessions.login-missing-credentials')
+      elsif params[:login].empty?
+        flash[:notice] = I18n.t('sessions.login-missing-username')
+      elsif params[:password].empty?
+        flash[:notice] = I18n.t('sessions.login-missing-password')
+      else
+        flash[:error] = I18n.t('sessions.login-failure') + " #{params[:login]}"
+      end
       redirect_to new_session_url
     end
   end

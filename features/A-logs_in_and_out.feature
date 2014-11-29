@@ -33,12 +33,12 @@ Feature: Log in and out
     When a user goes to the login page
 		Given a user with username <username> and password <password>
 		And presses Login
-		Then the user should see "Fill in this field"
+		Then the user should see <error>
 		Examples:
-		|username|password|
-		|"test1"|""|
-		|""|"test2"|
-		|""|""|
+		|username|password|error|
+		|"test1"|""|"Please enter password"|
+		|""|"test2"|Please enter username|
+		|""|""|"Please enter login credentials"|
 
 #-------------------- Test ID: 7 -------------------#
 	Scenario Outline: Check links availible for each type of user
