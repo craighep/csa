@@ -158,7 +158,7 @@ Background:
   Scenario: Create new user with invalid phone
     Then the user clicks link "New User"
     Then the user fills in all valid details
-    And replaces surname with "hello"
+    And replaces phone with "hello"
     Then presses "Create"
     Then the user should see "Phone is invalid"
 
