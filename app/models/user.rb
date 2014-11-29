@@ -12,7 +12,6 @@ class User < ActiveRecord::Base
   validates_format_of :phone,
                       with: /\d{2}[\s\d-]+/,
                       :allow_blank => true
-  validates_uniqueness_of :email
 
   has_one :image, dependent: :destroy
   has_one :user_detail, dependent: :destroy

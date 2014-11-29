@@ -1,3 +1,4 @@
+require 'will_paginate/array'
 class UsersController < ApplicationController
   # Since dealing with sensitive data we use SSL
   # Only destroy does not require SSL, all the others do
@@ -38,10 +39,28 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.paginate(page: params[:page],
+    pageNum = 1
+    if (is_number? params[:page])
+      pageNum = params[:page]
+    end
+    # Gets initial default page amount, and gets the user collection so that
+    # it can compare last page with page selected. If page selected is too high,
+    # then default to first page!
+    @users = User.paginate(page: 1,
+                           per_page: params[:per_page])
+                 .order('surname, firstname')
+    if (@users.total_pages < pageNum.to_i)
+      pageNum = 1
+    end
+    @users = User.paginate(page: pageNum,
                            per_page: params[:per_page])
                  .order('surname, firstname')
   end
+
+  #checks if page number is actually a number
+  def is_number?(obj)
+        obj.to_s == obj.to_i.to_s
+    end
 
   # GET /users/1
   # GET /users/1.json
@@ -91,7 +110,7 @@ class UsersController < ApplicationController
     # The ImageService model wraps up application logic to
     # handle saving images correctly
     @service = ImageService.new(@user, @image)
-
+    print :password
     respond_to do |format|
       if @service.save # Will attempt to save user and image
         format.html { redirect_to(user_url(@user, page: @current_page),

@@ -106,8 +106,14 @@ class BroadcastsController < ApplicationController
 
   def squelch_record_not_found(exception)
     respond_to do |format|
-      format.html { redirect_to(broadcasts_url(page: current_page)) }
-      format.json { head :no_content }
+      format.html {
+        redirect_to(broadcasts_url(page: @current_page),
+                    notice: I18n.t('broadcasts.broadcast-no-exists'))
+      }
+      format.json {
+        render json: "{#{I18n.t('broadcasts.broadcast-no-exists')}}",
+               status: :unprocessable_entity
+      }
     end
   end
 end
