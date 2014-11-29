@@ -55,7 +55,7 @@ Background:
     Then clicks first "Edit" user link
     And replaces phone with "test"
     And the user presses "Update"
-    Then the user should see "Bad phone number address format"
+    Then the user should see "Phone is not a number"
 
 #-------------------- Test ID: 28 -------------------#
   Scenario: Edit user with missing phone

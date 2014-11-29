@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   validates_format_of :email,
                       with: /\A([\w\.\-\+]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i,
                       message: 'Bad email address format'
+  validates_numericality_of  :phone
+  
   validates_uniqueness_of :email
 
   has_one :image, dependent: :destroy
