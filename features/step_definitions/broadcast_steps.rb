@@ -46,7 +46,7 @@ And /^URL box should not be empty$/ do
 end
 
 And /^URL box contents length should be shorter than "([^\"]*)"$/ do |length|
-  expect(find_field('shorten_url').value.length).to be < length
+  expect(find_field('shorten_url').value.length).to be < length.to_i
 end
 
 Then /^an email should be received$/ do

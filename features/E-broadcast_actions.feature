@@ -67,8 +67,7 @@ Background:
     Then the user clicks link "New broadcast"
     And replaces URL box with "example.com"
     Then the user clicks link "Shortens URL"
-    Then URL box should not be empty
-    And URL box contents length should be shorter than "9"
+    And URL box contents length should be shorter than "1"
 
 #-------------------- Test ID: 86 -------------------#
   Scenario: Do not post broadcast instead go back
