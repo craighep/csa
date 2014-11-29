@@ -55,7 +55,7 @@ Background:
     Then clicks first "Edit" user link
     And replaces phone with "test"
     And the user presses "Update"
-    Then the user should see "Phone is not a number"
+    Then the user should see "Phone is invalid"
 
 #-------------------- Test ID: 28 -------------------#
   Scenario: Edit user with missing phone
@@ -160,7 +160,7 @@ Background:
     Then the user fills in all valid details
     And replaces surname with "hello"
     Then presses "Create"
-    Then the user should see "Phone is not a number"
+    Then the user should see "Phone is invalid"
 
 #-------------------- Test ID: 42 -------------------#
   Scenario: Create new user with jobs selected
