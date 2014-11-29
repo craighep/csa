@@ -111,7 +111,7 @@ Background:
   Scenario: Create new user with no information
     Then the user clicks link "New User"
     Then presses "Create"
-    Then the user should see "8 errors prohibited this user from being saved"
+    Then the user should see "10 errors prohibited this user from being saved"
 
 #-------------------- Test ID: 36 -------------------#
   Scenario: Create new user with no forename
@@ -203,8 +203,8 @@ Background:
     Then the user should see <error>
     Examples:
     |passwordConfirm|error|
-    |""|"Password confirmation can't be blank"|
-    |"wrong"|"Password confirmation does not match"|
+    |""|"User detail password confirmation can't be blank"|
+    |"wrong"|"User detail password confirmation doesn't match Password"|
 
 #-------------------- Test ID: 48-49 -------------------#
   Scenario Outline: Search for users using forename
@@ -314,7 +314,7 @@ Background:
     Then the user should see <message>
     Examples:
     |page|message|
-    |"1"|"Displaying User 1 - 6"|
-    |"999"|"Displaying User 1 - 6""|
-    |"one"|"Displaying User 1 - 6""|
-    |""|"Displaying User 1 - 6""|
+    |"2"|"Displaying User 7 - 12"|
+    |"999"|"Displaying User 1 - 6"|
+    |"one"|"Displaying User 1 - 6"|
+    |""|"Displaying User 1 - 6"|

@@ -4,7 +4,9 @@ class UserDetail < ActiveRecord::Base
   validates_presence_of :password
   validates_uniqueness_of :login, within: 3..40
 
-  validates_confirmation_of :password, on: :save
+  validates_presence_of :password_confirmation,
+                        confirmation: true, :on => :create
+  validates_confirmation_of :password, :on => :create
 
   belongs_to :user
 

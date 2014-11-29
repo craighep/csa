@@ -15,6 +15,7 @@ User.transaction do
                        grad_year: 1985)
     UserDetail.create!(login: "cwl#{i}",
                        password: 'secret',
+                       password_confirmation: 'secret',
                        user: user)
   end
   # Create one special admin user
@@ -25,6 +26,7 @@ User.transaction do
                       grad_year: 1985)
   UserDetail.create!(login: 'admin',
                      password: 'taliesin',
+                     password_confirmation: 'taliesin',
                      user: user)
 
   # Create one test user
@@ -35,6 +37,7 @@ User.transaction do
                       grad_year: 2014)
   UserDetail.create!(login: 'craig',
                      password: 'secret',
+                     password_confirmation: 'secret',
                      user: user)
 
   # Create some dummy feeds
