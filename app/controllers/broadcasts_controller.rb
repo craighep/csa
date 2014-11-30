@@ -44,7 +44,7 @@ class BroadcastsController < ApplicationController
     #current_user.user.broadcasts << @broadcast
 
     no_errors = false
-
+    print :content
     respond_to do |format|
       if @broadcast.save
 
@@ -76,7 +76,10 @@ class BroadcastsController < ApplicationController
             end
           }
         end
-      end
+    else
+      format.html { render 'new'} ## Specify the format in which you are rendering "new" page
+      format.json { render json: @reservation.errors } ## You might want to specify a json format as well
+    end
     end
   end
 

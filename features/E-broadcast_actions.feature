@@ -79,4 +79,4 @@ Background:
   Scenario: Attempt to post empty broadcast
     Then the user clicks link "New broadcast"
     Then presses "Broadcast"
-    Then the user should see "1 error prohibited this broadcast from being saved"
+    Then the user should see "Content can't be blank"

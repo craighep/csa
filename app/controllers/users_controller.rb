@@ -110,7 +110,6 @@ class UsersController < ApplicationController
     # The ImageService model wraps up application logic to
     # handle saving images correctly
     @service = ImageService.new(@user, @image)
-    print :password
     respond_to do |format|
       if @service.save # Will attempt to save user and image
         format.html { redirect_to(user_url(@user, page: @current_page),
