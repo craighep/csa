@@ -29,6 +29,6 @@ build:
                 echo -p "gem list: $(gem list)"
 
         # Add more steps here:
-        # - script:
-        #        name: rspec
-        #        code: rake cucumber
+         - script:
+               name: rspec
+              code: rake cucumber
