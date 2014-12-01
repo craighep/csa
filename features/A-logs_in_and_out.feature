@@ -17,8 +17,8 @@ Feature: Log in and out
 		Then the user should see "Logged in successfully"
     Examples:
     |username|password|
-    |"admin"|"taliesin"|
-    |"cwl11"|"secret"|
+    | "admin" |"taliesin"|
+    |"cwl11" |"secret"|
     |"cwl5"|"secret"|
     |"cwl13"|"secret"|
 
@@ -35,10 +35,10 @@ Feature: Log in and out
 		And presses Login
 		Then the user should see <error>
 		Examples:
-		|username|password|error|
-		|"test1"|""|"Please enter password"|
-		|""|"test2"|"Please enter username"|
-		|""|""|"Please enter login credentials"|
+		| username | password |              error             |
+		|  "test1" |    ""    |     "Please enter password"    |
+		|    ""    |  "test2" |     "Please enter username"    |
+		|    ""    |    ""    |"Please enter login credentials"|
 
 #-------------------- Test ID: 7 -------------------#
 	Scenario Outline: Check links availible for each type of user
