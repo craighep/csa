@@ -78,13 +78,16 @@ end
 Cucumber::Rails::Database.javascript_strategy = :truncation
 
 require 'capybara/poltergeist'
-
+# Set the web driver for testing to PhantomJS, due to Nitrous not having
+# firefox installed. Works just as well, just without functionality
+# to view tests live (I do not require this anyway).
 Capybara.register_driver :poltergeist do |app|
     Capybara::Poltergeist::Driver.new(app, {debug: false})
 end
 
 Capybara.javascript_driver = :poltergeist
-
+# Method for signing a user in, providing username and password is
+# given. This reduces code in the user steps file.
 def signIn(login, password)
   visit root_path
   visit "/session/new"
@@ -94,7 +97,10 @@ def signIn(login, password)
     click_button "Login"
   end
 end
-
+# Used in a range of tests, this first looks for the checkbox required by
+# a test via an id, then sets it to a boolean value also passed in by
+# the test. It is also checked here if the checkbox value was changed.
+# Again, reduces code needed in step files.
 def check_Checkbox(id, checked)
   find(:xpath, "//*[@id='#{id}']").set(checked)
   if (checked == true)

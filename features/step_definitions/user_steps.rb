@@ -1,3 +1,5 @@
+# Step file created for testing
+
 Given /^a signed in user as admin$/ do
 	signIn("admin", "taliesin")
 end
