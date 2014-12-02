@@ -12,7 +12,7 @@ Background:
 
 #-------------------- Test ID: 78 -------------------#
   Scenario: View broadcast using links
-    And clicks first "Show" broadcast link
+    When the user clicks first "Show" broadcast link
     Then the user should see "Broadcast details"
 
 #-------------------- Test ID: 79 -------------------#
