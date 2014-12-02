@@ -1,5 +1,3 @@
-# Step file created for testing
-
 Given /^a signed in user as admin$/ do
 	signIn("admin", "taliesin")
 end
@@ -16,7 +14,7 @@ Then /^the user clicks link "([^\"]*)"$/ do |link|
 	click_link "#{link}"
 end
 
-And /^clicks first "([^\"]*)" user link$/ do |img_alt|
+And /^the user clicks first "([^\"]*)" user link$/ do |img_alt|
     first(:xpath, "//img[@alt = '#{img_alt}']/parent::a").click()
 end
 

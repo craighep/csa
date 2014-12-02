@@ -1,13 +1,3 @@
-def signIn(login, password)
-	visit root_path
-	visit "/session/new"
-	fill_in "login", :with => login
-	fill_in "password", :with => password
-	within(".content") do
-		click_button "Login"
-	end
-end
-
 When /^a user goes to the login page$/ do
 	visit root_path
 	visit "/session/new"

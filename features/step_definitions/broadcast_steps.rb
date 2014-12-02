@@ -1,11 +1,8 @@
-require 'rubygems'
-require 'json'
-
 Then /^the user should see list of broadcasts$/ do
   expect(page).to have_css(".sortable")
 end
 
-And /^clicks first "([^\"]*)" broadcast link$/ do |img_alt|
+And /^the user clicks first "([^\"]*)" broadcast link$/ do |img_alt|
     first(:xpath, "//img[@alt = '#{img_alt}']/parent::a").click()
 end
 

@@ -10,7 +10,7 @@ Feature: Testing access to different pages within the system
 
 #-------------------- Test ID: 9 -------------------#
   Scenario: View user using ID when not logged in
-    Then the user visits user id "41" page
+    When the user visits user id "41" page
     Then the user should see "Please log in"
 
 #-------------------- Test ID: 10 -------------------#
@@ -33,17 +33,17 @@ Feature: Testing access to different pages within the system
 
 #-------------------- Test ID: 13 -------------------#
   Scenario: View broadcasts using address bar when not logged in
-    Then the user goes to the broadcasts page
+    When the user goes to the broadcasts page
     Then the user should see "Please log in"
 
 #-------------------- Test ID: 14 -------------------#
   Scenario: View user using ID
-    Then the user visits user id "41" page
+    When the user visits user id "41" page
     Then the user should see "Back"
 
 #-------------------- Test ID: 15 -------------------#
   Scenario: List users using link not signed in
-    Then the user goes to the users page
+    When the user goes to the users page
     Then the user should see "Please log in"
 
 #-------------------- Test ID: 16 -------------------#

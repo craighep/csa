@@ -17,21 +17,21 @@ Background:
 
 #-------------------- Test ID: 79 -------------------#
   Scenario: Delete broadcast
-    Then clicks first "Destroy" broadcast link
+    When the user clicks first "Destroy" broadcast link
     And the user clicks ok on confirmation dialog
     Then the user visits broadcast id "1" page
     And the user should see "Broadcast no longer exists"
 
 #-------------------- Test ID: 80 -------------------#
   Scenario: Create new broadcast for all feeds
-    Then the user clicks link "New broadcast"
+    When the user clicks link "New broadcast"
     And replaces broadcast content with "#CraigBakes all the cucumbers"
     Then presses "Broadcast"
-    Then the user should see "Broadcast was successfully saved and broadcast to all feeds"
+    And the user should see "Broadcast was successfully saved and broadcast to all feeds"
 
 #-------------------- Test ID: 81 -------------------#
   Scenario: Create new broadcast for twitter
-    Then the user clicks link "New broadcast"
+    When the user clicks link "New broadcast"
     Then the user unchecks the "mail" checkbox
     And replaces broadcast content with "#CraigBakes twitter cucumbers"
     Then presses "Broadcast"
@@ -40,7 +40,7 @@ Background:
 
 #-------------------- Test ID: 82 -------------------#
   Scenario: Create new broadcast for email
-    Then the user clicks link "New broadcast"
+    When the user clicks link "New broadcast"
     Then the user unchecks the "twitter" checkbox
     And replaces broadcast content with "idUnique ab12 #CraigBakes email cucumbers"
     Then presses "Broadcast"
@@ -49,7 +49,7 @@ Background:
 
 #-------------------- Test ID: 83 -------------------#
   Scenario: Create new broadcast too long for twitter
-    Then the user clicks link "New broadcast"
+    When the user clicks link "New broadcast"
     Then the user unchecks the "mail" checkbox
     And replaces broadcast content with long string
     Then presses "Broadcast"
@@ -57,7 +57,7 @@ Background:
 
 #-------------------- Test ID: 84 -------------------#
   Scenario: Check correct amount of characters twitter broadcast
-    Then the user clicks link "New broadcast"
+    When the user clicks link "New broadcast"
     Then the user unchecks the "mail" checkbox
     And replaces broadcast content with "1234567890"
     Then twitter character count left should be "121"
@@ -65,19 +65,19 @@ Background:
 
 #-------------------- Test ID: 85 -------------------#
   Scenario: Use shortens URL functionality
-    Then the user clicks link "New broadcast"
+    When the user clicks link "New broadcast"
     And replaces URL box with "example.com"
     Then the user clicks link "Shortens URL"
     And URL box contents length should be shorter than "1"
 
 #-------------------- Test ID: 86 -------------------#
   Scenario: Do not post broadcast instead go back
-    Then the user clicks link "New broadcast"
+    When the user clicks link "New broadcast"
     And the user clicks link "Back"
     Then the user should see list of broadcasts
 
 #-------------------- Test ID: 87 -------------------#
   Scenario: Attempt to post empty broadcast
-    Then the user clicks link "New broadcast"
+    When the user clicks link "New broadcast"
     Then presses "Broadcast"
     Then the user should see "Content can't be blank"
