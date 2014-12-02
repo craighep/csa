@@ -1,5 +1,6 @@
-@javascript
-Feature: User list actions
+@javascript @profile
+Feature: Checking profile displays correctly for both admin
+  and regular user
 
 #-------------------- Test ID: 17 -------------------#
   Scenario: View profile using link as regular user

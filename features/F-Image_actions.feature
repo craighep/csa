@@ -1,4 +1,4 @@
-@javascript
+@javascript @images
 Feature: Image upload tests, checking images are correctly saved
 
 Background:
@@ -13,7 +13,7 @@ Background:
     Then the user should see their image
 
 #-------------------- Test ID: 89 -------------------#
-  Scenario: Upload and check image exists
+  Scenario: Upload already exiting image
     Given the user visits user id "40" page
     And the user clicks link "Edit"
     And the user uploads an image

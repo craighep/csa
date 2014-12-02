@@ -1,5 +1,6 @@
-@javascript
-Feature: Log in and out
+@javascript @login @logout @credentials
+Feature: Log in and out tests; checking different ranges of
+		credentials, empty credentials and unauthorised users
 
 #-------------------- Test ID: 1 -------------------#
 	Scenario: Unsuccessful login
@@ -16,11 +17,11 @@ Feature: Log in and out
     And presses Login
 		Then the user should see "Logged in successfully"
     Examples:
-    |username|password|
-    | "admin" |"taliesin"|
-    |"cwl11" |"secret"|
-    |"cwl5"|"secret"|
-    |"cwl13"|"secret"|
+    | username | password |
+    |"admin"   |"taliesin"|
+    |"cwl11"   |"secret"  |
+    |"cwl5"    |"secret"  |
+    |"cwl13"   |"secret"  |
 
 #-------------------- Test ID: 3 -------------------#
   Scenario: Successful logout
@@ -47,7 +48,7 @@ Feature: Log in and out
 		And presses Login
 		Then the user should see links <pages>
 		Examples:
-		|username|password|pages|
-		|"cwl11"|"secret"|"Home,Jobs,Profile"|
-		|"admin"|"taliesin"|"Home,Jobs,Profile,Users,Broadcasts"|
-		|""|""|"Home,Jobs"|
+		| username |  password |                 pages              |
+		|"cwl11"   |"secret"   |"Home,Jobs,Profile"                 |
+		|"admin"   |"taliesin" |"Home,Jobs,Profile,Users,Broadcasts"|
+		|""        |""         |"Home,Jobs"                         |

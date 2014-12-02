@@ -1,5 +1,9 @@
-﻿@javascript
-Feature: User list actions
+﻿@javascript @users @details
+Feature: Various tasks concerning the list of, and individual
+  users; editing, creating(with and without valid information)
+  and deleting users- actions on users etc possible because
+  test data is copied from development db to test db (see
+  env.rb in support folder)
 
 Background:
   Given a signed in user as admin
@@ -202,9 +206,9 @@ Background:
     Then presses "Create"
     Then the user should see <error>
     Examples:
-    |passwordConfirm|error|
-    |""|"User detail password confirmation can't be blank"|
-    |"wrong"|"User detail password confirmation doesn't match Password"|
+    | passwordConfirm |                            error                         |
+    |""               |"User detail password confirmation can't be blank"|
+    |"wrong"          |"User detail password confirmation doesn't match Password"|
 
 #-------------------- Test ID: 48-49 -------------------#
   Scenario Outline: Search for users using forename
@@ -212,9 +216,9 @@ Background:
     Then presses "Search"
     Then the user should see <result>
     Examples:
-    |firstname|result|
-    |"chris"|"Displaying 1 User"|
-    |"falseuser"|"No entries found"|
+    | firstname |       result      |
+    |"chris"    |"Displaying 1 User"|
+    |"falseuser"|"No entries found" |
 
 #-------------------- Test ID: 50-51 -------------------#
   Scenario Outline: Search for users using surname
@@ -222,9 +226,9 @@ Background:
     Then presses "Search"
     Then the user should see <result>
     Examples:
-    |surname|result|
-    |"loftus"|"Displaying 1 User"|
-    |"falseuser"|"No entries found"|
+    |  surname  |       result       |
+    |"loftus"   |"Displaying 1 User" |
+    |"falseuser"|"No entries found"  |
 
 #-------------------- Test ID: 52-53 -------------------#
   Scenario Outline: Search for users using grad year
@@ -232,9 +236,9 @@ Background:
     Then presses "Search"
     Then the user should see <result>
     Examples:
-    |gradYear|result|
-    |"1985"|"Displaying User 1 - 6 of 41 in total"|
-    |"1234"|"No entries found"|
+    | gradYear |                result                |
+    |"1985"    |"Displaying User 1 - 6 of 41 in total"|
+    |"1234"    |"No entries found"                    |
 
 #-------------------- Test ID: 54-55 -------------------#
   Scenario Outline: Search for users using phone
@@ -242,9 +246,9 @@ Background:
     Then presses "Search"
     Then the user should see <result>
     Examples:
-    |phone|result|
+    |     phone    |                  result              |
     |"01970 622422"|"Displaying User 1 - 6 of 41 in total"|
-    |"999999"|"No entries found"|
+    |"999999"      |"No entries found"                    |
 
 #-------------------- Test ID: 56-57 -------------------#
   Scenario Outline: Search for users using email
@@ -252,9 +256,9 @@ Background:
     Then presses "Search"
     Then the user should see <result>
     Examples:
-    |email|result|
-    |"cwl@aber.ac.uk"|"Displaying 1 User"|
-    |"false@false.false"|"No entries found"|
+    |        email      |        result     |
+    |"cwl@aber.ac.uk"   |"Displaying 1 User"|
+    |"false@false.false"|"No entries found" |
 
 #-------------------- Test ID: 58 -------------------#
   Scenario: Search for users using empty string
@@ -269,12 +273,12 @@ Background:
     Then presses "Search"
     Then the user should see <result>
     Examples:
-    |checkbox|result|
-    |"firstname"|"Displaying 1 User"|
-    |"surname"|"No entries found"|
-    |"email"|"No entries found"|
-    |"phone"|"No entries found"|
-    |"grad year"|"No entries found"|
+    |  checkbox  |       result      |
+    |"firstname" |"Displaying 1 User"|
+    |"surname"   |"No entries found" |
+    |"email"     |"No entries found" |
+    |"phone"     |"No entries found" |
+    |"grad year" |"No entries found" |
 
 #-------------------- Test ID: 64-69 -------------------#
   Scenario Outline: Search user using forename with all checkboxes selected
@@ -283,13 +287,13 @@ Background:
     Then presses "Search"
     Then the user should see <result>
     Examples:
-    |text|result|
-    |"chris"|"Displaying 1 User"|
-    |"loftus"|"Displaying 1 User"|
-    |"cwl@aber.ac.uk"|"Displaying 1 User"|
-    |"01970 622422"|"Displaying User 1 - 6 of 41 in total"|
-    |"1985"|"Displaying User 1 - 6 of 41 in total"|
-    |"flasedata"|"No entries found"|
+    |       text     |                  result              |
+    |"chris"         |"Displaying 1 User"                   |
+    |"loftus"        |"Displaying 1 User"                   |
+    |"cwl@aber.ac.uk"|"Displaying 1 User"                   |
+    |"01970 622422"  |"Displaying User 1 - 6 of 41 in total"|
+    |"1985"          |"Displaying User 1 - 6 of 41 in total"|
+    |"flasedata"     |"No entries found"                    |
 
 #-------------------- Test ID: 70 -------------------#
   Scenario: Browse users using pagination
@@ -313,8 +317,8 @@ Background:
     Then the user goes to the user page <page> through address bar
     Then the user should see <message>
     Examples:
-    |page|message|
-    |"2"|"Displaying User 7 - 12"|
-    |"999"|"Displaying User 1 - 6"|
-    |"one"|"Displaying User 1 - 6"|
-    |""|"Displaying User 1 - 6"|
+    | page |           message      |
+    |"2"   |"Displaying User 7 - 12"|
+    |"999" |"Displaying User 1 - 6" |
+    |"one" |"Displaying User 1 - 6" |
+    |""    |"Displaying User 1 - 6" |

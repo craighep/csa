@@ -1,5 +1,6 @@
-@javascript
-Feature: Access to pages tests
+@javascript @pages
+Feature: Testing access to different pages within the system
+  depending on the level of user; admin, regular and none-user
 
 #-------------------- Test ID: 8 -------------------#
   Scenario: View another user using ID as none-admin

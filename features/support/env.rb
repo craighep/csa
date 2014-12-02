@@ -47,6 +47,8 @@ rescue NameError
   raise "You need to add database_cleaner to your Gemfile (in the :test group) if you wish to use it."
 end
 
+#Copy the database from the developmet build to the test each time a feature is
+#started. Clean after tests run too for fair tests.
 Before do
 DatabaseCleaner.start
 load Rails.root.join('db/seeds.rb')

@@ -1,5 +1,6 @@
-@javascript
-Feature: Broadcast list actions
+@javascript @broacast @twitter @mail
+Feature: Tests trying out broadcasts; creating new (valid,
+  invalid), deleting and viewing
 
 Background:
   Given a signed in user as admin
